@@ -1,4 +1,4 @@
 package krenc.mirek.teaipracadomowa53.controller;
 
-public class controller {
+public class CurrencyController {
 }

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1> Currency game</h1>
+<h2>Try to guess the current value of the below currency in PLN: <p th:text="${currency.getCurrencySymbol()}"></p></h2>
+
+<form th:method="post" th:object="${guessCurrency}" th:action="@{/}">
+    <label for="price">Guessing price</label>
+    <input type="text" th:field="*{currencyValue}" id="price">
+    <input type="submit" value="Sprawdź">
+</form>
+<div>
+    <h3 th:text="${session.message}"></h3>
+</div>
+<div id="wartosc" style="display: none;" th:text="${currency.getCurrencyValue()}"></div>
+</body>
+</html>
